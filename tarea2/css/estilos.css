@@ -1,0 +1,139 @@
+:root{
+  --morado:#4B2C82;      /* profundo */
+  --rosa:#E04F9A;        /* acento */
+  --verde:#6BD89B;       /* contraste */
+  --fondo:#F5F5F7;       /* bg base */
+  --texto:#1b1b1f;
+  --muted:#5f6470;
+  --white:#ffffff;
+  --border:#e7e7ec;
+  --radius:16px;
+}
+
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--fondo);
+  color:var(--texto);
+  font-family:"Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.6;
+}
+
+/* Tipografía de títulos */
+h1,h2,h3,h4,.heading{
+  font-family:"Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+/* Header */
+.site-header{ border-bottom:1px solid var(--border); background:var(--white); }
+.site-header .container{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; position: relative;}
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--texto); }
+.brand img{ height:40px; }
+.nav{ list-style:none; display:flex; gap:16px; margin:0; padding:0; }
+.nav a{ text-decoration:none; color:var(--texto); padding:8px 10px; border-radius:10px; }
+.nav a:hover{ background:#efeef6; }
+#navToggle{ display:none; }
+
+.hero {
+  background: url("../img/header.jpg") center center / cover no-repeat;
+  color: var(--white);
+  padding: 64px 0;
+  position: relative;
+}
+.hero .cta .btn-primary{
+  background: var(--verde);
+  color:#0b2b1f;
+  border:0;
+}
+.hero .cta .btn-secondary{
+  background: transparent;
+  color: var(--white);
+  border:2px solid rgba(255,255,255,.35);
+}
+
+.hero .media{
+  background: url("../img/hero2.png") center center / cover no-repeat;
+  border-radius: var(--radius);
+  min-height: 320px;
+  width: 100%;
+}
+
+/* Sección beneficios (franja morada) */
+.beneficios{
+  background: var(--morado);
+  color: var(--white);
+  padding: 56px 0;
+}
+.beneficio{
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius);
+  text-align:center;
+  padding:24px;
+}
+.beneficio i{ font-size:32px; color:var(--verde); display:block; margin-bottom:10px; }
+
+/* Cards generales */
+.card{
+  background: var(--white);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  height:100%;
+}
+.card .media{ background:#ececf6; aspect-ratio:16/9; }
+.card-body{ padding:16px; }
+.badge-soft{ background:#ffe7f1; color:#7e0f3b; font-weight:700; font-size:.8rem; padding:6px 10px; border-radius:999px; }
+
+.bg-purple-soft {
+  background: #EAE3F7;
+}
+
+
+/* Footer */
+.site-footer{
+  background: var(--morado);
+  color: var(--white);
+  padding: 40px 0 28px;
+  margin-top: 48px;
+}
+.site-footer .top{
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:flex-start;
+}
+.site-footer .menu a{
+  color: var(--white);
+  text-decoration:none;
+  margin:0 16px;
+}
+.site-footer .rrss a{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:50%;
+  color:#0b2b1f; background: var(--verde);
+  text-decoration:none; margin-left:10px;
+}
+.site-footer .meta{
+  display:flex; gap:32px; flex-wrap:wrap; margin-top:18px; color:#eef1ff;
+}
+
+/* Utilidades */
+.container{ width:min(1120px, 92%); margin-inline:auto; }
+.grid{ display:grid; gap:20px; }
+.grid-3{ grid-template-columns: repeat(3, 1fr); }
+.grid-4{ grid-template-columns: repeat(4, 1fr); }
+.center{text-align:center}
+.btn{ display:inline-block; padding:12px 18px; border-radius:14px; text-decoration:none; font-weight:700; }
+.link{ color:var(--rosa); text-decoration:none; font-weight:700; }
+.link:hover{ text-decoration:underline; }
+
+@media (max-width: 900px){
+  .grid-3{ grid-template-columns: 1fr 1fr; }
+  .grid-4{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  #navToggle{ display:inline-flex; }
+  .nav{ display:none; position:absolute; right:4%; top:68px; background:var(--white); border:1px solid var(--border); border-radius:14px; padding:10px; flex-direction:column; }
+  .nav.open{ display:flex; }
+  .grid-3, .grid-4{ grid-template-columns: 1fr; }
+}
