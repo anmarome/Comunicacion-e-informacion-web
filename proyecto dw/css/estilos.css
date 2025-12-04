@@ -1,0 +1,556 @@
+:root{
+  --morado:#4B2C82;      /* profundo */
+  --rosa:#E04F9A;        /* acento */
+  --verde:#6BD89B;       /* contraste */
+  --fondo:#F5F5F7;       /* bg base */
+  --texto:#1b1b1f;
+  --muted:#5f6470;
+  --white:#ffffff;
+  --border:#e7e7ec;
+  --radius:16px;
+}
+
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--fondo);
+  color:var(--texto);
+  font-family:"Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.6;
+}
+
+/* Tipografía de títulos */
+h1,h2,h3,h4,.heading{
+  font-family:"Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+/* Header */
+.site-header{ border-bottom:1px solid var(--border); background:var(--white); }
+.site-header .container{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; position: relative;}
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--texto); }
+.brand img{ height:40px; }
+.nav{ list-style:none; display:flex; gap:16px; margin:0; padding:0; }
+.nav a{ text-decoration:none; color:var(--texto); padding:8px 10px; border-radius:10px; }
+.nav a:hover{ background:#efeef6; }
+#navToggle{ display:none; }
+
+.hero {
+  background: url("../img/header.webp") center center / cover no-repeat;
+  color: var(--white);
+  padding: 64px 0;
+  position: relative;
+}
+.hero .cta .btn-primary{
+  background: var(--verde);
+  color:#0b2b1f;
+  border:0;
+}
+.hero .cta .btn-secondary{
+  background: transparent;
+  color: var(--white);
+  border:2px solid rgba(255,255,255,.35);
+}
+
+.hero .media{
+  background: url("../img/hero2.webp") center center / cover no-repeat;
+  border-radius: var(--radius);
+  min-height: 320px;
+  width: 100%;
+}
+
+/* Sección beneficios (franja morada) */
+.beneficios{
+  background: var(--morado);
+  color: var(--white);
+  padding: 56px 0;
+}
+.beneficio{
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius);
+  text-align:center;
+  padding:24px;
+}
+.beneficio i{ font-size:32px; color:var(--verde); display:block; margin-bottom:10px; }
+
+/* Cards generales */
+.card{
+  background: var(--white);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  height:100%;
+}
+.card .media{ background:#ececf6; aspect-ratio:16/9; }
+.card-body{ padding:16px; }
+.badge-soft{ background:#ffe7f1; color:#7e0f3b; font-weight:700; font-size:.8rem; padding:6px 10px; border-radius:999px; }
+.card { transition: transform .28s ease, box-shadow .28s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(11,18,34,.06); }
+
+.bg-purple-soft {
+  background: #EAE3F7;
+}
+
+
+/* Footer */
+.site-footer{
+  background: var(--morado);
+  color: var(--white);
+  padding: 40px 0 28px;
+  margin-top: 48px;
+}
+.site-footer .top{
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:flex-start;
+}
+.site-footer .menu a{
+  color: var(--white);
+  text-decoration:none;
+  margin:0 16px;
+}
+.site-footer .rrss a{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:50%;
+  color:#0b2b1f; background: var(--verde);
+  text-decoration:none; margin-left:10px;
+}
+.site-footer .meta{
+  display:flex; gap:32px; flex-wrap:wrap; margin-top:18px; color:#eef1ff;
+}
+
+/* Utilidades */
+.container{ width:min(1120px, 92%); margin-inline:auto; }
+.grid{ display:grid; gap:20px; }
+.grid-3{ grid-template-columns: repeat(3, 1fr); }
+.grid-4{ grid-template-columns: repeat(4, 1fr); }
+.center{text-align:center}
+.btn{ display:inline-block; padding:12px 18px; border-radius:14px; text-decoration:none; font-weight:700; }
+.link{ color:var(--rosa); text-decoration:none; font-weight:700; }
+.link:hover{ text-decoration:underline; }
+
+/* Sección full-wide*/
+.map-wrap{
+  width:100vw;
+  position:relative;
+  left:50%; right:50%;
+  margin-left:-50vw; margin-right:-50vw;
+  background:#eef1f6;
+}
+
+/* Iframe responsive */
+.map-embed{
+  display:block;
+  width:100%;
+  height:380px; /* ajusta a gusto */
+  border:0;
+}
+
+
+/* 1) Header por encima de todo */
+.site-header{
+  position: sticky;   /* se mantiene arriba al hacer scroll */
+  top: 0;
+  z-index: 1000;      /* capa alta */
+  border-bottom:1px solid var(--border);
+  background:var(--white);
+}
+.site-header .container{ position: relative; }
+
+/* 2) Menú móvil sobre el hero y anclado al header */
+@media (max-width: 640px){
+  #navToggle{ display:inline-flex; }
+
+  #menu{
+    display:none;
+    position:absolute;
+    right:16px;
+    top: calc(100% + 8px);     /* cuelga justo debajo del header */
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:12px;
+    flex-direction:column;
+    gap:8px;
+    z-index: 1100;             /* por encima del hero */
+    box-shadow:0 12px 24px rgba(0,0,0,.08);
+  }
+  #menu.open{ display:flex !important; }
+}
+
+/* 3) Asegurar que el hero NO tape el header */
+.hero{
+  position: relative;
+  z-index: 0;                  /* no sobre el header */
+}
+
+/* Contacto: 2 columnas en desktop, 1 en móvil */
+.contact-grid{
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* inputs y textarea 100% ancho y sin cortes */
+#formContacto input,
+#formContacto textarea{
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;           /* evita overflow en grid */
+}
+
+/* Romper a una columna en pantallas pequeñas */
+@media (max-width: 900px){
+  .contact-grid{
+    grid-template-columns: 1fr;  /* stack */
+  }
+}
+
+@media (min-width: 900px){
+  .map-embed{ height: 520px; }
+}
+
+@media (max-width: 900px){
+  .grid-3{ grid-template-columns: 1fr 1fr; }
+  .grid-4{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  #navToggle{ display:inline-flex; }
+  .nav{ display:none; position:absolute; right:4%; top:68px; background:var(--white); border:1px solid var(--border); border-radius:14px; padding:10px; flex-direction:column; }
+  .nav.open{ display:flex; }
+  .grid-3, .grid-4{ grid-template-columns: 1fr; }
+}
+
+
+/* Scroll to top — estilo base */
+#toTop {
+  display: none;              
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 9999;
+
+  width: 40px;
+  height: 40px;
+  line-height: 40px;         
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--verde);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  display: none;
+}
+
+#toTop:hover {
+  filter: brightness(1.05);
+}
+
+@media (max-width: 420px) {
+  #toTop {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+  }
+}
+
+
+/* Reseñas: avatar*/
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;        
+  min-height: 130px;
+}
+
+.review-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Avatar circular */
+.review-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 64px;
+  border: 3px solid rgba(75,44,130,0.06);
+  box-shadow: 0 6px 18px rgba(75,44,130,0.06);
+}
+
+/* Nombre y rol de la persona */
+.review-name {
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  color: var(--texto);
+  line-height: 1;
+}
+.review-role {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Ajuste del texto de la reseña dentro de la card-body */
+.review-card .card-body {
+  padding: 0;             
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .review-avatar { width: 56px; height: 56px; flex: 0 0 56px; }
+  .grid.grid-3 { gap: 14px; } 
+}
+
+
+.accordion-item{ margin-bottom:8px; }
+.accordion-btn{ width:100%; text-align:left; padding:12px; background:transparent; border:1px solid var(--border); border-radius:12px; font-weight:700; }
+.accordion-panel{ max-height:0; overflow:hidden; transition: max-height .32s ease, padding .32s ease; padding:0 12px; }
+.accordion-item.open .accordion-panel{ max-height:400px; padding:12px; }
+
+.accordion-button:not(.collapsed) {
+  background: var(--verde);
+  color: #fff !important;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.15rem rgba(0, 0, 0, 0.1);
+}
+
+.accordion-body ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.accordion-body a {
+  color: var(--verde);
+  text-decoration: none;
+}
+
+.accordion-body a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Profesores: avatar circular, cards y adaptaciones para carousel */
+.prof-avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin-inline:auto;
+  border: 4px solid rgba(75,44,130,0.06);
+  box-shadow: 0 8px 22px rgba(75,44,130,0.06);
+}
+
+/* Alinear altura de cards y espaciado */
+.card.h-100 { display:flex; flex-direction:column; justify-content:flex-start; gap:8px; padding:18px; }
+
+/* Indicadores más visibles */
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+}
+.carousel-indicators .active { background: var(--verde); }
+
+/* Botones "Ver perfil" */
+.view-profile { 
+  margin-top: auto; 
+  background-color: var(--verde);
+  border: none;
+}
+
+.view-profile:hover { 
+  margin-top: auto; 
+  background-color: var(--morado);
+  border: none;
+}
+
+.btn-outline-secondary {
+  border-color: var(--rosa);
+  color: var(--rosa );
+}
+
+.btn-outline-secondary:hover {
+  border-color: var(--fondo);
+  color: var(--fondo);
+  background-color: var(--morado);
+}
+
+.filtro-curso:hover {
+  background-color: var(--verde);
+}
+
+.filtro-curso {
+  cursor: pointer;
+  border:1px solid var(--border);
+  background-color: var(--border);
+}
+
+.filtro-curso.active {
+  background-color: var(--rosa);
+  color: white;
+  border-color: var(--rosa);
+}
+
+/* Ajustes responsive: en móvil mostramos 1 card por slide visualmente */
+@media (max-width: 768px){
+  .prof-avatar{ width:96px; height:96px; }
+  .card.h-100 { padding:14px; }
+}
+
+/* ---- espaciado consistente entre secciones ---- */
+.section { padding: 40px 0; }
+
+/* lila muy suave para alternar  */
+.section--muted { background: #F3EDF9; }
+
+/* mejorar contraste y legibilidad dentro de la franja morada existente */
+.beneficios .accordion-btn,
+.beneficios .accordion-panel,
+.beneficios .accordion-panel a { color: var(--texto); }
+
+/* ajustes estéticos para botones en secciones lila suave */
+.bg-purple-soft .view-profile { background: var(--morado); border: 0; color: #fff; }
+.bg-purple-soft .view-profile:hover { background: var(--verde); color: #0b2b1f; }
+
+
+/* ==== Estilos filtros responsivos ==== */
+#filtros {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 12px;
+  align-items: start;
+  padding-top: 10px;
+}
+
+#filtros .filtro-curso {
+  width: 100%;
+}
+
+/* Tablet: 3 columnas */
+@media (max-width: 1024px) {
+  #filtros {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Móvil: 1 columna (vertical) */
+@media (max-width: 640px) {
+  #filtros {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*GALERIIIIIAAA*/
+
+.gal-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gal-thumb:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+
+
+/*BLOG BLOG BLOG BLOG*/
+/* HERO */
+.blog-hero {
+  padding: 70px 0;
+  background: var(--fondo);
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--morado);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* TARJETAS DEL BLOG */
+.blog-card {
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.blog-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 16px;
+}
+
+.blog-title {
+  font-size: 1.2rem;
+  color: var(--texto);
+  margin-bottom: 8px;
+}
+
+.blog-extract {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* BOTÓN LEER MÁS */
+.blog-btn {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--morado);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-btn:hover {
+  color: var(--rosa);
+}
+
+/* FORMULARIO */
+.blog-contact {
+  background: var(--fondo);
+}
+
+.submit-btn {
+  background: var(--morado);
+  color: white;
+  padding: 10px;
+}
+
+.submit-btn:hover {
+  background: var(--rosa);
+}
+

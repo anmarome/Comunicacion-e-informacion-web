@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos HTML -->
+    <title>Blog | Santa Gráfica</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="blog de arte, ilustración, diseño gráfico, técnicas de dibujo, acuarela, creatividad, procesos creativos, tutoriales de arte, Santa Gráfica, Costa Rica">
+    <meta name="description" content="Explora artículos sobre arte, ilustración, creatividad y diseño. Consejos, técnicas, inspiración y recursos creados por Santa Gráfica.">
+    <meta name="copyright" content="Santa Gráfica © 2025">
+    <meta name="author" content="Santa Gráfica | Desarrollo Web: Ana R.">
+    <meta name="generator" content="Bootstrap 5">
+    <meta name="robots" content="index, follow">
+
+    <!-- Metadatos Facebook / Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Blog de Arte | Santa Gráfica">
+    <meta property="og:description" content="Lee artículos sobre arte, ilustración y procesos creativos. Inspírate con contenido exclusivo de Santa Gráfica.">
+  <meta property="og:url" content="https://usuario2.vs2407.com/proyecto"> <!--AGREGAR UNA VEZ SUBIR AL HOST Y OBTENER URL -->
+  <meta property="og:image" content="https://usuario2.vs2407.com/hero2.webp">  <!--AGREGAR UNA VEZ SUBIR AL HOST Y OBTENER URL -->
+    <meta property="og:locale" content="es_CR">
+    <meta property="og:site_name" content="Santa Gráfica">
+
+    <link rel="icon" type="image/png" href="../img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <img src="../img/logo-negro.webp" alt="Santa Gráfica" />
+      </a>
+      <button id="navToggle" class="btn" aria-controls="menu" aria-expanded="false" style="background:#ececf6;border:1px solid #ddd;">☰</button>
+      <ul id="menu" class="nav" aria-label="Principal">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="./cursos.html">Cursos</a></li>
+        <li><a  href="./contacto.html">Contacto</a></li>
+        <li><a class="active" href="./blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!--HERO-->
+    <section class="blog-hero" style="background-color: var(--morado);">
+        <div class="container text-center">
+            <h1 class="hero-title animate__animated animate__fadeInUp text-white">Blog de Santa Gráfica</h1>
+            <p class="hero-sub text-white">Consejos, inspiración y recursos creativos para tus proyectos</p>
+        </div>
+    </section>
+
+    <!--articulos-->
+    <section class="blog-list py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Artículo 1 -->
+                <div class="col-12 col-md-4">
+                    <article class="blog-card animate__animated animate__fadeInUp">
+                    <img src="../img/manga1.webp" class="blog-img" alt="">
+
+                    <div class="blog-content">
+                        <h3 class="blog-title">Introducción a la Ilustración Digital</h3>
+                        <p class="blog-extract">
+                        Exploramos herramientas esenciales, apps recomendadas, consejos para principiantes y cómo comenzar a desarrollar tu propio estilo artístico usando tabletas o software accesible.
+                        </p>
+                        <a href="#" class="blog-btn" onclick="leerArticulo1()" >Leer más</a>
+                    </div>
+                    </article>
+                </div>
+
+                <!-- Artículo 2 -->
+                <div class="col-12 col-md-4">
+                    <article class="blog-card animate__animated animate__fadeInUp">
+                    <img src="../img/anatomico1.webp" class="blog-img" alt="">
+
+                    <div class="blog-content">
+                        <h3 class="blog-title">Cómo Elegir Materiales de Acuarela</h3>
+                        <p class="blog-extract">
+                        Una guía clara y sencilla para elegir papeles, pinceles y pigmentos si querés empezar con acuarela. Te contamos qué vale la pena comprar, qué evitar y cómo armar tu primer set sin gastar de más.
+                        </p>
+                        <a href="#" class="blog-btn" onclick="leerArticulo2()">Leer más</a>
+                    </div>
+                    </article>
+                </div>
+
+                <!-- Artículo 3 -->
+                <div class="col-12 col-md-4">
+                    <article class="blog-card animate__animated animate__fadeInUp">
+                        <img src="../img/acua1.webp" class="blog-img" alt="">
+
+                        <div class="blog-content">
+                            <h3 class="blog-title">Técnicas para Mejorar tu Dibujo Anatómico</h3>
+                            <p class="blog-extract">
+                            Conocé las bases para mejorar tu dibujo anatómico: proporciones, formas geométricas, práctica gestual y tips para estudiar referencias correctamente sin frustrarte en el proceso.
+                            </p>
+                            <a href="#" class="blog-btn" onclick="leerArticulo3()">Leer más</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--formulario-->
+    <section class="blog-contact py-3">
+        <div class="container">
+
+            <!-- Formulario - Blog -->
+            <form id="formBlog" class="card" style="margin-top:40px;">
+              <div class="card-body">
+
+                <h3 style="margin-bottom:20px; font-weight:600;">¿Tienes una consulta sobre este blog?</h3>
+
+                <label>Nombre</label>
+                <input type="text" name="nombre" required
+                  style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px; margin:6px 0 12px;">
+
+                <label>Correo</label>
+                <input type="email" name="correo" required
+                  style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px; margin:6px 0 12px;">
+
+                <label>Teléfono</label>
+                <input type="tel" name="telefono" required
+                  style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px; margin:6px 0 12px;">
+
+                <label>Categoría</label>
+                <select name="categoria" required
+                  style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px; margin:6px 0 16px;">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Tecnicas de arte">Técnicas de arte</option>
+                  <option value="Cursos y talleres">Cursos y talleres</option>
+                  <option value="Materiales">Materiales</option>
+                  <option value="Otros">Otro</option>
+                </select>
+
+                <label>Adjuntar archivo (opcional)</label>
+                <input type="file" name="archivo"
+                  style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px; margin:6px 0 16px; background:var(--white);">
+
+                <label>Mensaje</label>
+                <textarea name="mensaje" rows="5" required
+                  style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px; margin:6px 0 16px;"></textarea>
+
+                <button class="btn" style="width:100%; background:var(--verde); border:0; padding:12px; font-weight:600;">
+                  Enviar consulta
+                </button>
+
+              </div>
+            </form>
+        </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="top">
+        <a class="brand" href="../index.html" style="color:#fff;">
+          <img src="../img/favicon.webp" alt="Santa Gráfica" class="logo-footer"/>
+          <div style="font-weight:800;">SANTA<br/>GRÁFICA</div>
+        </a>
+        <nav class="menu" aria-label="Footer">
+          <a href="../index.html">Inicio</a>
+          <a href="./nosotros.html">Nosotros</a>
+          <a href="./cursos.html">Cursos</a>
+          <a href="./contacto.html">Contacto</a>
+          <a href="./blog.html">Blog</a>
+        </nav>
+        <div class="rrss" aria-label="Redes">
+          <a href="https://www.facebook.com/academiasantagrafica" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/santagrafica" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="meta">
+        <div>San Pedro y Heredia, Costa Rica</div>
+        <div>Lunes a sábado · 9:00 am – 6:00 pm</div>
+      </div>
+    </div>
+  </footer>
+
+      <!-- Scroll to top -->
+  <a href="#top" id="toTop" class="position-fixed end-0 bottom-0 m-3" aria-label="Volver arriba">↑</a>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="../js/app.js"></script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init("1FHmzDlPO6AMTHrTl");
+      })();
+    </script>
+
+    <script src="../js/blog.js"></script>
+
+</body>
+</html>

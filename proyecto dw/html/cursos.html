@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+<head>
+        <!-- Metadatos HTML -->
+  <title>Cursos de Arte | Santa Gráfica Costa Rica</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Santa Gráfica, cursos de arte, talleres de ilustración, clases de acuarela, diseño gráfico, dibujo artístico, academia de arte en Costa Rica, aprender pintura, cursos presenciales y online">
+  <meta name="description" content="Explora los cursos y talleres de arte que Santa Gráfica ofrece: acuarela, ilustración, dibujo anatómico, manga y más.">
+  <meta name="copyright" content="Santa Gráfica © 2025">
+  <meta name="author" content="Santa Gráfica | Desarrollo Web: Ana R.">
+  <meta name="generator" content="Bootstrap 5">
+  <meta name="robots" content="index, follow">
+
+  <!-- Metadatos Facebook / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Santa Gráfica | Cursos y Talleres de Arte en Costa Rica">
+  <meta property="og:description" content="Descubre los cursos de arte, ilustración y diseño de Santa Gráfica. Aprende técnicas de acuarela, dibujo y pintura con artistas profesionales.">
+  <meta property="og:url" content="https://usuario2.vs2407.com/proyecto"> <!--AGREGAR UNA VEZ SUBIR AL HOST Y OBTENER URL -->
+  <meta property="og:image" content="https://usuario2.vs2407.com/hero2.webp">  <!--AGREGAR UNA VEZ SUBIR AL HOST Y OBTENER URL -->
+  <meta property="og:locale" content="es_CR">
+  <meta property="og:site_name" content="Santa Gráfica">
+
+  <link rel="icon" type="image/png" href="../img/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" >
+  <link rel="stylesheet" href="../css/estilos.css" />
+
+  <!--script y libreria necesaria para el funcionamiento de la galeria-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+</head>
+<body class="page-cursos">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <img src="../img/logo-negro.webp" alt="Santa Gráfica" />
+      </a>
+      <button id="navToggle" class="btn" aria-controls="menu" aria-expanded="false" style="background:#ececf6;border:1px solid #ddd;">☰</button>
+      <ul id="menu" class="nav" aria-label="Principal">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a class="active" href="./cursos.html">Cursos</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Promociones -->
+  <section class="promos-section text-white" style="padding:32px 0; background:var(--morado);">
+    <div class="container">
+      <h2 class="heading" style="font-size:28px; margin:0 0 20px; ">Promociones</h2>
+      <p style="max-width:70ch; margin:0 0 32px;">
+        Aprovechá nuestras ofertas especiales por tiempo limitado y aprendé con los mejores programas de arte.
+      </p>
+
+      <div class="grid grid-3" style="gap:24px;">
+
+        <!-- Promo 1 -->
+        <article class="card animate__animated animate__pulse animate__infinite animate__slower" >
+          <div class="media" style="background:url('../img/acua1.webp') center/cover no-repeat;"></div>
+          <div class="card-body">
+            <span class="badge-soft">-20% OFF</span>
+            <h3 class="heading" style="font-size:18px; margin-top:10px;">Acuarela + Ilustración</h3>
+            <p class="muted" style="color:var(--muted); margin:6px 0 12px;">
+              Inscribite en ambos cursos y obtené un 20% en el total.
+            </p>
+            <a class="btn" style="background:var(--rosa); border:0; width:100%;" href="#">
+              Inscribirme
+            </a>
+          </div>
+        </article>
+
+        <!-- Promo 2 -->
+        <article class="card animate__animated animate__pulse animate__infinite animate__slower">
+          <div class="media" style="background:url('../img/manga1.webp') center/cover no-repeat;"></div>
+          <div class="card-body">
+            <span class="badge-soft">Combo Especial</span>
+            <h3 class="heading" style="font-size:18px; margin-top:10px;">Taller de Manga + Materiales</h3>
+            <p class="muted" style="color:var(--muted); margin:6px 0 12px;">
+              Incluye sketchbook premium y rotuladores básicos.
+            </p>
+            <a class="btn" style="background:var(--verde); border:0; width:100%;" href="#">
+              Inscribirme
+            </a>
+          </div>
+        </article>
+
+        <!-- Promo 3 -->
+        <article class="card animate__animated animate__pulse animate__infinite animate__slower">
+          <div class="media" style="background:url('../img/anatomico1.webp') center/cover no-repeat;"></div>
+          <div class="card-body">
+            <span class="badge-soft">Pack Online</span>
+            <h3 class="heading" style="font-size:18px; margin-top:10px;">3 Cursos Online por ₡60,000 </h3>
+            <p class="muted" style="color:var(--muted); margin:6px 0 12px;">
+              Elegí entre dibujo anatómico, acuarela, creatividad, y más.
+            </p>
+            <a class="btn" style="background:var(--morado); color:#fff; border:0; width:100%;" href="#">
+              Inscribirme
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- Encabezado -->
+    <section class=" section--muted" style="padding:40px 0 16px;">
+      <div class="container">
+        <h1 class="heading" style="font-size:32px; margin:0 0 8px;">Cursos</h1>
+        <p style="color:var(--muted); max-width:70ch;">
+          Explora nuestras modalidades y elige la que mejor se adapte a tu ritmo: Online, Presencial, Talleres intensivos o programas para Empresas.
+        </p>
+      </div>
+    </section>
+
+    
+
+    <!-- Filtros -->
+    <section class="" style="padding:0 0 10px; " >
+      <div id="filtros" class="grid container">
+        <button class="btn filtro-curso" data-filter="all">Todos</button>
+        <button class="btn filtro-curso" data-filter="online">Online</button>
+        <button class="btn filtro-curso" data-filter="presencial">Presenciales</button>
+        <button class="btn filtro-curso" data-filter="taller">Talleres</button>
+      </div>
+    </section>
+
+    <!-- Grid de cursos -->
+    <section class="container" style="padding:10px 0 40px;">
+      <div id="gridCursos" class="grid grid-3">
+        <!-- Online -->
+        <article class="card" data-kind="online">
+          <div class="media" style="background:url('../img/anatomico1.webp') center/cover no-repeat;"></div>
+          <div class="card-body">
+            <h3 class="heading" style="font-size:18px;">Dibujo Anatómico Online</h3>
+            <p class="muted" style="color:var(--muted); margin:6px 0 10px;">Fundamentos, proporciones y volumen desde casa.</p>
+            <ul style="color:var(--muted); padding-left:18px; margin:0 0 10px;">
+              <li>Profesor: Francesca Izurieta</li>
+              <li>Horarios: Mar/Jue 6–8 pm</li>
+              <li>Precio: ₡ — / cuotas</li>
+              <li>Requisitos: Papel, lápices HB/2B/4B</li>
+            </ul>
+            <a class="btn" style="background:var(--verde); border:0;" href="#" data-course="Dibujo Anatómico Online">Inscribirme</a>
+          </div>
+        </article>
+
+        <!-- Presencial -->
+        <article class="card" data-kind="presencial">
+          <div class="media" style="background:url('../img/acua1.webp') center/cover no-repeat;"></div>
+          <div class="card-body">
+            <h3 class="heading" style="font-size:18px;">Acuarela Presencial</h3>
+            <p class="muted" style="color:var(--muted); margin:6px 0 10px;">Color, agua y texturas. Técnica paso a paso.</p>
+            <ul style="color:var(--muted); padding-left:18px; margin:0 0 10px;">
+              <li>Profesor: Osvaldo Sequeira</li>
+              <li>Horarios: Sábados 9–12 m.d.</li>
+              <li>Precio: ₡ — / mensual</li>
+              <li>Requisitos: Papel algodón 300g, set básico</li>
+            </ul>
+            <a class="btn" style="background:var(--verde); border:0;" href="#" data-course="Acuarela Presencial">Inscribirme</a>
+          </div>
+        </article>
+
+        <!-- Taller -->
+        <article class="card" data-kind="taller">
+          <div class="media" style="background:url('../img/manga1.webp') center/cover no-repeat;"></div>
+          <div class="card-body">
+            <h3 class="heading" style="font-size:18px;">Taller de Manga</h3>
+            <p class="muted" style="color:var(--muted); margin:6px 0 10px;">Personajes, narrativa y entintado.</p>
+            <ul style="color:var(--muted); padding-left:18px; margin:0 0 10px;">
+              <li>Profesor: Roberto Guillen</li>
+              <li>Horarios: Domingos 10–1 pm</li>
+              <li>Precio: ₡ — / por taller</li>
+              <li>Requisitos: Rotuladores, sketchbook</li>
+            </ul>
+            <a class="btn" style="background:var(--verde); border:0;" href="#" data-course="Taller de Manga">Inscribirme</a>
+          </div>
+        </article>
+
+        <!-- Empresas -->
+        <article class="card" data-kind="empresas">
+          <div class="media" style="background:#efeef6; display:flex; align-items:center; justify-content:center;">
+            <i class="bi bi-people" style="font-size:46px; color:#8a8fb3;"></i>
+          </div>
+          <div class="card-body">
+            <h3 class="heading" style="font-size:18px;">Programas para Empresas</h3>
+            <p class="muted" style="color:var(--muted); margin:6px 0 10px;">Capacitaciones a medida: ilustración, animación, creatividad aplicada.</p>
+            <ul style="color:var(--muted); padding-left:18px; margin:0 0 10px;">
+              <li>Modalidad: In-company u online</li>
+              <li>Duración: Flexible</li>
+              <li>Contenido: Personalizado por objetivo</li>
+            </ul>
+            <a class="btn" style="background:var(--verde); border:0;" href="#" data-course="Programas para Empresas">Inscribirme</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+      <!--GALERIAAA-->
+    <section class="galeria-section" style="padding:40px 0; background:#f7f7fa;">
+      <div class="container">
+        <h2 class="heading mb-4">Galería</h2>
+
+        <div class="row g-3">
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/acua1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/acua1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/anatomico1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/anatomico1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/manga1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/manga1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/anatomico1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/anatomico1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/manga1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/manga1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/acua1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/acua1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/acua1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/acua1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/anatomico1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/anatomico1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <a href="../img/manga1.webp" class="glightbox" data-gallery="galeria">
+              <img src="../img/manga1.webp" class="img-fluid gal-thumb" alt="">
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="top">
+        <a class="brand" href="../index.html" style="color:#fff;">
+          <img src="../img/favicon.webp" alt="Santa Gráfica" class="logo-footer"/>
+          <div style="font-weight:800;">SANTA<br/>GRÁFICA</div>
+        </a>
+        <nav class="menu" aria-label="Footer">
+          <a href="../index.html">Inicio</a>
+          <a href="./nosotros.html">Nosotros</a>
+          <a href="./cursos.html">Cursos</a>
+          <a href="./contacto.html">Contacto</a>
+          <a href="./blog.html">Blog</a>
+        </nav>
+        <div class="rrss" aria-label="Redes">
+          <a href="https://www.facebook.com/academiasantagrafica" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/santagrafica" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="meta">
+        <div>San Pedro y Heredia, Costa Rica</div>
+        <div>Lunes a sábado · 9:00 am – 6:00 pm</div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Scroll to top -->
+  <a href="#top" id="toTop" class="position-fixed end-0 bottom-0 m-3" aria-label="Volver arriba">↑</a>
+    <!-- Bootstrap bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- SweetAlert2 (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+  <script src="../js/app.js"></script>
+
+  <script>
+    const lightbox = GLightbox({
+      touchNavigation: true,
+      loop: true,
+      closeButton: true,
+      zoomable: true,
+    });
+  </script>
+</body> 
+</html>
